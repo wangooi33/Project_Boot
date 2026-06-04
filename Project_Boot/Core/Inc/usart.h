@@ -29,7 +29,7 @@ extern "C" {
 #include "main.h"
 
 /* USER CODE BEGIN Includes */
-
+#define U1BUF_MAXSIZE 512
 /* USER CODE END Includes */
 
 extern UART_HandleTypeDef huart1;
@@ -41,6 +41,7 @@ extern UART_HandleTypeDef huart1;
 void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
+extern uint8_t gU1RxBuf[U1BUF_MAXSIZE];
 
 /* USER CODE END Prototypes */
 

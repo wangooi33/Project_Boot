@@ -1,10 +1,11 @@
-#ifndef _AT24Cxx_H
-#define _AT24Cxx_H
-/* include -------------------------------------------------------------------*/
-#include "main.h"
+#ifndef __AT24CXX_H
+#define __AT24CXX_H
+
+/* includes -----------------------------------------------------------------*/
 #include "iic.h"
 
-/* macro ---------------------------------------------------------------------*/
+/* macro --------------------------------------------------------------------*/
+
 #define AT24C01     127
 #define AT24C02     255
 #define AT24C04     511
@@ -18,27 +19,12 @@
 #define EE_TYPE     AT24C02
 
 
-/* types ---------------------------------------------------------------------*/
-
-
-/* constants -----------------------------------------------------------------*/
-
-
-/* global variable -----------------------------------------------------------*/
-
-
-/* functions prototypes ------------------------------------------------------*/
+/* functions prototypes -----------------------------------------------------*/
 void AT24Cxx_Init(void);
-
-uint8_t AT24Cxx_ReadByte(uint16_t addr);
-void AT24Cxx_WriteByte(uint16_t Addr, uint8_t Data);
 void AT24Cxx_Read(uint16_t Addr, uint8_t *pBuf, uint16_t Datalen);
 void AT24Cxx_Write(uint16_t Addr, uint8_t *pBuf, uint16_t Datalen);
-
 uint8_t AT24Cxx_Check(void);
 
 
-
-#endif /* _AT24Cxx_H */
-
+#endif /* __AT24CXX_H */
 

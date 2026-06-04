@@ -18,6 +18,7 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "dma.h"
 #include "spi.h"
 #include "usart.h"
 #include "gpio.h"
@@ -26,11 +27,15 @@
 /* USER CODE BEGIN Includes */
 #include "iic.h"
 #include "IAP.h"
+#include "NM25Qxx.h"
+#include "AT24Cxx.h"
+#include "delay.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-
+const char SoftWareID[] = "B002";
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -57,7 +62,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
+uint8_t UpdateFlag[4] = {0};
+uint32_t TimeCnt;
 /* USER CODE END 0 */
 
 /**
@@ -89,18 +95,24 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
+  MX_DMA_Init();
   MX_SPI2_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  HAL_UARTEx_ReceiveToIdle_DMA(&huart1,gU1RxBuf,U1BUF_MAXSIZE);
+  DWT_Init();
   AT24Cxx_Init();
-  IAP_Test();
-  IAP_CheckUpdata();
+  Flash_Init();
+  Bootloader_Init();
+  AT24Cxx_Read(0,UpdateFlag,4);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	TimeCnt++;
+    BootloaderTask();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
