@@ -1,10 +1,13 @@
-/Project_F407/.vscode/
+/Project_Boot/.vscode/
 
-/Project_F407/MDK-ARM/Project_F407/
-/Project_F407/MDK-ARM/*.log
-/Project_F407/MDK-ARM/JLink*
-/Project_F407/MDK-ARM/*.ini
-/Project_F407/MDK-ARM/RTE/_Project_F407/
+/Project_Boot/MDK-ARM/Boot/
+/Project_Boot/MDK-ARM/*.log
+/Project_Boot/MDK-ARM/JLink*
+/Project_Boot/MDK-ARM/*.ini
+/Project_Boot/MDK-ARM/RTE/_Boot/
+/Project_Boot/MDK-ARM/DebugConfig
+/Project_Boot/MDK-ARM/*.scvd
+/Project_Boot/MDK-ARM/*.王sir
 
 *.o
 *.d

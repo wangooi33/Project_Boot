@@ -5,7 +5,6 @@
 #include <string.h>
 #include "main.h"
 #include "AT24Cxx.h"
-#include "NM25Qxx.h"
 #include "check.h"
 
 /* macro ---------------------------------------------------------------------*/

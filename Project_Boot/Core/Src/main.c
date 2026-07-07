@@ -27,15 +27,14 @@
 /* USER CODE BEGIN Includes */
 #include "iic.h"
 #include "IAP.h"
-#include "NM25Qxx.h"
-#include "AT24Cxx.h"
+#include "at24cxx.h"
 #include "delay.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-const char SoftWareID[] = "B002";
+const char SoftWareID[] = "B003";
 /* USER CODE END PTD */
 
 /* Private define ------------------------------------------------------------*/
@@ -102,7 +101,6 @@ int main(void)
   HAL_UARTEx_ReceiveToIdle_DMA(&huart1,gU1RxBuf,U1BUF_MAXSIZE);
   DWT_Init();
   AT24Cxx_Init();
-  Flash_Init();
   Bootloader_Init();
   AT24Cxx_Read(0,UpdateFlag,4);
   /* USER CODE END 2 */

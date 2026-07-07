@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../ASW/IAP;../BSW/EERPOM;../BSW/IIC;../ASW/Check;../BSW/Flash;..\BSW\Delay</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc;../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32F1xx/Include;../Drivers/CMSIS/Include;../ASW/IAP;../BSW/EERPOM;../BSW/IIC;../ASW/Check;../BSW/Flash;../BSW/Delay</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -680,16 +680,6 @@
               <FileName>AT24Cxx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\BSW\EERPOM\AT24Cxx.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>BSW/Flash</GroupName>
-          <Files>
-            <File>
-              <FileName>NM25Qxx.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\BSW\Flash\NM25Qxx.c</FilePath>
             </File>
           </Files>
         </Group>
